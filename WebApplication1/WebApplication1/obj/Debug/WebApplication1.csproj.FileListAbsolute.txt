@@ -4,3 +4,9 @@ D:\Google Drive\aplikasibuatanku\workshop_asp_basic\WebApplication1\WebApplicati
 D:\Google Drive\aplikasibuatanku\workshop_asp_basic\WebApplication1\WebApplication1\obj\Debug\WebApplication1.dll
 D:\Google Drive\aplikasibuatanku\workshop_asp_basic\WebApplication1\WebApplication1\obj\Debug\WebApplication1.pdb
 D:\Google Drive\aplikasibuatanku\workshop_asp_basic\WebApplication1\WebApplication1\obj\Debug\WebApplication1.csprojResolveAssemblyReference.cache
+D:\Google Drive\aplikasibuatanku\workshop_asp_basic\Workshop_ASP_Basic_GridView_CRUD\WebApplication1\WebApplication1\bin\WebApplication1.dll.config
+D:\Google Drive\aplikasibuatanku\workshop_asp_basic\Workshop_ASP_Basic_GridView_CRUD\WebApplication1\WebApplication1\bin\WebApplication1.dll
+D:\Google Drive\aplikasibuatanku\workshop_asp_basic\Workshop_ASP_Basic_GridView_CRUD\WebApplication1\WebApplication1\bin\WebApplication1.pdb
+D:\Google Drive\aplikasibuatanku\workshop_asp_basic\Workshop_ASP_Basic_GridView_CRUD\WebApplication1\WebApplication1\obj\Debug\WebApplication1.csprojResolveAssemblyReference.cache
+D:\Google Drive\aplikasibuatanku\workshop_asp_basic\Workshop_ASP_Basic_GridView_CRUD\WebApplication1\WebApplication1\obj\Debug\WebApplication1.dll
+D:\Google Drive\aplikasibuatanku\workshop_asp_basic\Workshop_ASP_Basic_GridView_CRUD\WebApplication1\WebApplication1\obj\Debug\WebApplication1.pdb

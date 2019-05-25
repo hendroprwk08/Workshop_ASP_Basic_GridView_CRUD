@@ -8,15 +8,26 @@
 </head>
 <body>
     <form id="form1" runat="server">
+
     <div>
+        <h3>Data Barang</h3>
+        <asp:Label ID="Label1" runat="server" Text="#Barang"></asp:Label>
+        <asp:TextBox ID="tb_id" runat="server"></asp:TextBox><br />
+        <asp:Label ID="Label2" runat="server" Text="Nama"></asp:Label>
+        <asp:TextBox ID="tb_nama" runat="server"></asp:TextBox><br />
+        <asp:Label ID="Label3" runat="server" Text="Jenis"></asp:Label>
+        <asp:TextBox ID="tb_jenis" runat="server"></asp:TextBox><br />
+        <asp:Label ID="Label4" runat="server" Text="Harga"></asp:Label>
+        <asp:TextBox ID="tb_harga" runat="server"></asp:TextBox><br />
+        <asp:Button ID="bt_simpan" runat="server" Text="Simpan" OnClick="bt_simpan_Click" />
+
         <asp:GridView ID="gv" runat="server"
             AutoGenerateColumns="false" 
-            EmptyDataText="Tak ada data." 
-            ShowFooter="true" 
+            EmptyDataText="Tak ada data" 
+            ShowHeaderWhenEmpty ="true"
             AllowPaging="true"  
             PageSize="2" 
             OnPageIndexChanging="onPageIndexChanging"
-            OnRowCommand="onRowCommand"
             OnRowEditing="onRowEditing" 
             OnRowCancelingEdit="onRowCancelingEdit" 
             OnRowDeleting="onRowDeleting" 
@@ -29,9 +40,6 @@
                     <EditItemTemplate>
                         <asp:Label ID="lbl_id" runat="server" Text='<%# Eval("ID_BARANG") %>'></asp:Label>
                     </EditItemTemplate>
-                    <FooterTemplate>
-                         <asp:TextBox ID="tb_id_footer" runat="server"></asp:TextBox>
-                    </FooterTemplate>
                 </asp:TemplateField>
                 <asp:TemplateField HeaderText="NAMA">
                     <ItemTemplate>
@@ -40,9 +48,6 @@
                     <EditItemTemplate>
                         <asp:TextBox ID="tb_nama" runat="server" Text='<%# Eval("NAMA") %>'></asp:TextBox>
                     </EditItemTemplate>
-                    <FooterTemplate>
-                        <asp:TextBox ID="tb_nama_footer" runat="server"></asp:TextBox>
-                    </FooterTemplate>
                 </asp:TemplateField>
                 <asp:TemplateField HeaderText="JENIS">
                     <ItemTemplate>
@@ -51,9 +56,6 @@
                     <EditItemTemplate>
                         <asp:TextBox ID="tb_jenis" runat="server" Text='<%# Eval("JENIS") %>'></asp:TextBox>
                     </EditItemTemplate>
-                    <FooterTemplate>
-                        <asp:TextBox ID="tb_jenis_footer" runat="server"></asp:TextBox>
-                    </FooterTemplate>
                 </asp:TemplateField>
                 <asp:TemplateField HeaderText="HARGA">
                     <ItemTemplate>
@@ -62,9 +64,6 @@
                     <EditItemTemplate>
                         <asp:TextBox ID="tb_harga" runat="server" Text='<%# Eval("HARGA") %>'></asp:TextBox>
                     </EditItemTemplate>
-                    <FooterTemplate>
-                        <asp:TextBox ID="tb_harga_footer" runat="server"></asp:TextBox>
-                    </FooterTemplate>
                 </asp:TemplateField>
                 <asp:TemplateField HeaderText="" ItemStyle-Width="120">
                     <ItemTemplate>
@@ -75,9 +74,6 @@
                         <asp:Button  ID="bt_perbarui" runat="server" CommandName="Update" Text="Perbarui" /></Button>
                         <asp:Button  ID="bt_batal" runat="server" CommandName="Cancel" Text="Batal" /></Button>
                     </EditItemTemplate>
-                    <FooterTemplate>
-                        <asp:Button  ID="bt_tambah" runat="server" CommandName="Insert" Text="Tambah" /></Button>                    
-                    </FooterTemplate>
                 </asp:TemplateField>
             </Columns>
         </asp:GridView>

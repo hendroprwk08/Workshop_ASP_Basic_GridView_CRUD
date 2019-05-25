@@ -29,8 +29,15 @@ namespace WebApplication1
                 var s = "select * from barang";
                 dt = new DataTable();
                 dt = d.read(s);
-
+                
+                /*
                 Console.WriteLine(dt.Rows.Count.ToString());
+                if (dt.Rows.Count == 0)
+                {
+                    DataRow row = dt.NewRow();
+                    dt.Rows.Add(row); 
+                }
+                 * */
 
                 gv.DataSource = dt;
                 gv.DataBind();
@@ -61,38 +68,7 @@ namespace WebApplication1
         {
             if (e.CommandName.Equals("Insert"))
             {
-                DatabaseClass d = new DatabaseClass();
-
-                string id = (gv.FooterRow.FindControl("tb_id_footer") as TextBox).Text.ToString().Trim();
-                string nama = (gv.FooterRow.FindControl("tb_nama_footer") as TextBox).Text.ToString().Trim();
-                string jenis = (gv.FooterRow.FindControl("tb_jenis_footer") as TextBox).Text.ToString();
-                string harga = (gv.FooterRow.FindControl("tb_harga_footer") as TextBox).Text.ToString().Trim();
-
-                if (nama.Length == 0 || jenis.Length == 0 || harga.Length == 0)
-                {
-                    return;
-                }
-
-                try
-                {
-                    d.openDb();
-
-                    var s = "insert into barang values " +
-                        "('" + id + "', '" + nama + "', '" + jenis + "', " + harga + ")";
-
-                    Console.WriteLine(s);
-                    d.execute(s);
-
-                    loadGrid();
-                }
-                catch (Exception ex)
-                {
-                    Console.WriteLine(ex.Message);
-                }
-                finally
-                {
-                    d.closeDB();
-                }
+                
             }
         }
 
@@ -155,6 +131,50 @@ namespace WebApplication1
             {
                 d.closeDB();
             }
+        }
+
+        protected void bt_simpan_Click(object sender, EventArgs e)
+        {
+            DatabaseClass d = new DatabaseClass();
+
+            string id = tb_id.Text.ToString();
+            string nama = tb_nama.Text.ToString();
+            string jenis = tb_jenis.Text.ToString();
+            string harga = tb_harga.Text.ToString();
+
+            if (nama.Length == 0 || jenis.Length == 0 || harga.Length == 0)
+            {
+                return;
+            }
+
+            try
+            {
+                d.openDb();
+
+                var s = "insert into barang values " +
+                    "('" + id + "', '" + nama + "', '" + jenis + "', " + harga + ")";
+
+                d.execute(s);
+
+                loadGrid();
+                kosong();
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
+            finally
+            {
+                d.closeDB();
+            }
+        }
+
+        private void kosong()
+        {
+            tb_id.Text = "";
+            tb_nama.Text = "";
+            tb_jenis.Text = "";
+            tb_harga.Text = "";
         }
     }
 }
